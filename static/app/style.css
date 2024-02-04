@@ -1,0 +1,44 @@
+.headerNavBar{
+    background: linear-gradient(-120deg, #009cde, #012169) !important;
+}
+
+.nav-link{
+    color: white !important;
+    margin-right: 10px;
+}
+
+.nav-link:hover{
+    color: rgba(255,255,255,.5) !important;
+}
+
+.headerImageLogo{
+    width: 100px;
+}
+
+.btn{
+    margin-top: 5px !important;
+}
+
+.pageFooter {
+    margin-top: 30px;
+    background-color: #0069D9;
+    color: white;
+}
+
+.pageFooter a {
+    color: white !important;
+}
+
+.notify{
+    margin-right: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+    table th,td{
+        font-size: 9px;
+    }
+
+    .notify{
+        margin-right: 20px;
+    }
+}

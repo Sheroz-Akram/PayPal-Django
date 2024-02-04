@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Redirecting to {{ Name }}</title>
+  </head>
+  <body>
+    <h1>{{ Title }}</h1>
+    <h3>Redirecting to {{ Name }} in 3 seconds...</h3>
+    <p>If you are not automatically redirected, please click <a href="{{ Link }}">here</a>.</p>
+    <script>
+      // Set the number of seconds to wait before redirecting
+      var countdown = 3;
+      
+      // Update the countdown every second
+      var intervalId = setInterval(function() {
+        countdown--;
+        document.querySelector('h3').textContent = 'Redirecting to {{ Name }} in ' + countdown + ' seconds...';
+        
+        // If the countdown is zero, redirect to the other website
+        if (countdown === 0) {
+          clearInterval(intervalId);
+          window.location.href = '{{ Link }}';
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>

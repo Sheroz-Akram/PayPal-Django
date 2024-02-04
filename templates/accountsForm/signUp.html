@@ -1,0 +1,96 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>PayPal - Sign In</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'accountsForm/style.css' %}">
+</head>
+
+<body>
+    <div class="user-form">
+
+
+
+        <!-- Form in Which User can Enter Data -->
+        <form id="signUpForm" action="" method="POST">
+            <img src="{% static 'images/logo.png' %}" alt="" srcset="">
+            <h2 class="text-center">Sign Up</h2>
+        
+
+            <!-- Show Message to the User -->
+            <div class="{{ messageType }}" style="display: {{ messageDisplay }};" role="alert">
+                <h4 class="alert-heading">{{ messageHeading }}</h4>
+                <p>{{ messageContent }}</p>
+            </div>
+            
+            <!-- A CSRF secure application assigns a unique CSRF token for every user session. -->
+            {% csrf_token %}
+
+
+            <div class="form-group">
+                <input type="text" id="userName" name="userName" class="form-control" placeholder="Enter You Username"
+                    required="required">
+            </div>
+
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col">
+                        <input type="text" id="userFirstName" name="userFirstName" class="form-control" placeholder="First name" required>
+                    </div>
+                    <div class="col">
+                        <input type="text" id="userLastName" name="userLastName" class="form-control" placeholder="Last name" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="email" id="userEmail" name="userEmail" class="form-control" placeholder="Enter You Email"
+                    required="required">
+            </div>
+            <div class="form-group">
+                <input type="password" id="userPassword" name="userPassword" class="form-control" placeholder="Enter Your Password"
+                    required="required">
+            </div>
+
+            <div class="form-group">
+                <select id="selectCurrency" itemid="userCurrency" name="userCurrency" class="form-control" required>
+                    <option selected value="">Choose Currency</option>
+                    <option value="USD">USD</option>
+                    <option value="GBP">GBP</option>
+                    <option value="EUR">EUR</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <div class="clearfix">
+                    <label class="float-left form-check-label" id="agreeCheckBox"><input type="checkbox" required> I Agree to Term & Conditions. <a
+                            href="Terms">Read</a></label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">Registor</button>
+            </div>
+
+        </form>
+        <p class="text-center"><a href="/SignIn">Already have an Account</a></p>
+    </div>
+
+
+    <footer class="bg-light text-center text-lg-start fixed-bottom">
+        <!-- Copyright -->
+        <div class="text-center p-3 pageFooter">
+            © 2023 Copyright:
+            <a class="text-dark" href="https://www.paypal.com/">PayPal</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+
+</body>
+
+</html>
