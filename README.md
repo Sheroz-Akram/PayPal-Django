@@ -7,7 +7,7 @@ There is also can API in the application that can convert the currency to other 
 
 To run the code we need Django and Python installed on the system:
 ``` 
-python3 manage runserver localhost:80
+python3 manage runserver
 ```
 
 **Requirements**:
